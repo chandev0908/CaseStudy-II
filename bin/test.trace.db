@@ -1,0 +1,1094 @@
+2022-04-10 16:26:02 database: wrong user or password; user: "ADMIN"
+org.h2.message.DbException: Wrong user name or password [28000-212]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
+	at org.h2.server.web.WebApp.test(WebApp.java:972)
+	at org.h2.server.web.WebApp.process(WebApp.java:241)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:510)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 16 more
+2022-04-10 16:32:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table students(f_name text, l_name text, [*]year text, section text)"; expected "identifier"; SQL statement:
+create table students(f_name text, l_name text, year text, section text) [42001-212]
+2022-04-10 16:33:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table students(f_name text, l_name text, email text, [*]year text, section text)"; expected "identifier"; SQL statement:
+create table students(f_name text, l_name text, email text, year text, section text) [42001-212]
+2022-04-10 16:33:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table students (f_name text, l_name text, email text, [*]year text, section text)"; expected "identifier"; SQL statement:
+create table students (f_name text, l_name text, email text, year text, section text) [42001-212]
+2022-04-10 16:33:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table students (f_name text, l_name text, email text, [*]year text, section text)"; expected "identifier"; SQL statement:
+create table students (f_name text, l_name text, email text, year text, section text) [42001-212]
+2022-04-10 16:37:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Unknown data type: "STRING"; SQL statement:
+create table students (f_name string, l_name string, email stringext, year string, section string) [50004-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.Parser.readIfDataType1(Parser.java:6199)
+	at org.h2.command.Parser.readIfDataType(Parser.java:6040)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:6022)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5897)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:9328)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:9266)
+	at org.h2.command.Parser.parseCreate(Parser.java:6745)
+	at org.h2.command.Parser.parsePrepared(Parser.java:763)
+	at org.h2.command.Parser.parse(Parser.java:691)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:568)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-04-10 16:38:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Unknown data type: "STRING"; SQL statement:
+create table students (f_name string, l_name string, email string, year string, section string) [50004-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.Parser.readIfDataType1(Parser.java:6199)
+	at org.h2.command.Parser.readIfDataType(Parser.java:6040)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:6022)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5897)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:9328)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:9266)
+	at org.h2.command.Parser.parseCreate(Parser.java:6745)
+	at org.h2.command.Parser.parsePrepared(Parser.java:763)
+	at org.h2.command.Parser.parse(Parser.java:691)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:568)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-04-10 16:38:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table students (f_name text, l_name text, email text, [*]year text, section text)"; expected "identifier"; SQL statement:
+create table students (f_name text, l_name text, email text, year text, section text) [42001-212]
+2022-04-10 16:42:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE studentsDB ( \000d\000a   id INT NOT NULL, \000d\000a   f_name VARCHAR(25) NOT NULL, \000d\000a   l_name VARCHAR(25) NOT NULL,\000d\000a   email VARCHAR(20) NOT NULL,\000d\000a   [*]year VARCHAR(10) NOT NULL,\000d\000a   section VARCHAR(10) NOT NULL\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE studentsDB ( 
+   id INT NOT NULL, 
+   f_name VARCHAR(25) NOT NULL, 
+   l_name VARCHAR(25) NOT NULL,
+   email VARCHAR(20) NOT NULL,
+   year VARCHAR(10) NOT NULL,
+   section VARCHAR(10) NOT NULL
+) [42001-212]
+2022-04-10 16:43:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE studentsDB ( \000d\000a   id INT NOT NULL, \000d\000a   f_name VARCHAR(25) NOT NULL, \000d\000a   l_name VARCHAR(25) NOT NULL,\000d\000a   email VARCHAR(20) NOT NULL,\000d\000a   [*]year VARCHAR(10) NOT NULL,\000d\000a   section VARCHAR(10) NOT NULL\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE studentsDB ( 
+   id INT NOT NULL, 
+   f_name VARCHAR(25) NOT NULL, 
+   l_name VARCHAR(25) NOT NULL,
+   email VARCHAR(20) NOT NULL,
+   year VARCHAR(10) NOT NULL,
+   section VARCHAR(10) NOT NULL
+) [42001-212]
+2022-04-10 16:43:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE studentsDB ( \000d\000a   id INT NOT NULL, \000d\000a   f_name VARCHAR(25) NOT NULL, \000d\000a   l_name VARCHAR(25) NOT NULL,\000d\000a   email VARCHAR(20) NOT NULL,\000d\000a   [*]year VARCHAR(10) NOT NULL,\000d\000a   section VARCHAR(10) NOT NULL\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE studentsDB ( 
+   id INT NOT NULL, 
+   f_name VARCHAR(25) NOT NULL, 
+   l_name VARCHAR(25) NOT NULL,
+   email VARCHAR(20) NOT NULL,
+   year VARCHAR(10) NOT NULL,
+   section VARCHAR(10) NOT NULL
+) [42001-212]
+2022-04-10 16:43:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE studentsDB ( \000d\000a   id INT NOT NULL, \000d\000a   f_name VARCHAR(25) NOT NULL, \000d\000a   l_name VARCHAR(25) NOT NULL,\000d\000a   email VARCHAR(20) NOT NULL,\000d\000a   [*]year VARCHAR(15) NOT NULL,\000d\000a   section VARCHAR(10) NOT NULL,\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE studentsDB ( 
+   id INT NOT NULL, 
+   f_name VARCHAR(25) NOT NULL, 
+   l_name VARCHAR(25) NOT NULL,
+   email VARCHAR(20) NOT NULL,
+   year VARCHAR(15) NOT NULL,
+   section VARCHAR(10) NOT NULL,
+) [42001-212]
+2022-04-10 16:43:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE studentsDB ( \000d\000a   id INT NOT NULL, \000d\000a   f_name VARCHAR(25) NOT NULL, \000d\000a   l_name VARCHAR(25) NOT NULL,\000d\000a   email VARCHAR(20) NOT NULL,\000d\000a   [*]year VARCHAR(15) NOT NULL,\000d\000a   section VARCHAR(10) NOT NULL,\000d\000a   submission_date DATE \000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE studentsDB ( 
+   id INT NOT NULL, 
+   f_name VARCHAR(25) NOT NULL, 
+   l_name VARCHAR(25) NOT NULL,
+   email VARCHAR(20) NOT NULL,
+   year VARCHAR(15) NOT NULL,
+   section VARCHAR(10) NOT NULL,
+   submission_date DATE 
+) [42001-212]
+2022-04-10 16:43:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE studentsDB ( \000d\000a   id INT NOT NULL, \000d\000a   f_name VARCHAR(25) NOT NULL, \000d\000a   l_name VARCHAR(25) NOT NULL,\000d\000a   email VARCHAR(20) NOT NULL,\000d\000a   [*]year VARCHAR(15) NOT NULL,\000d\000a   section VARCHAR(15) NOT NULL,\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE studentsDB ( 
+   id INT NOT NULL, 
+   f_name VARCHAR(25) NOT NULL, 
+   l_name VARCHAR(25) NOT NULL,
+   email VARCHAR(20) NOT NULL,
+   year VARCHAR(15) NOT NULL,
+   section VARCHAR(15) NOT NULL,
+) [42001-212]
+2022-04-10 16:44:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE studentsDB ( \000d\000a   id INT NOT NULL, \000d\000a   f_name VARCHAR(25) NOT NULL, \000d\000a   l_name VARCHAR(25) NOT NULL,\000d\000a   email VARCHAR(20) NOT NULL,\000d\000a   [*]year VARCHAR(15) NOT NULL,\000d\000a   section VARCHAR(10) NOT NULL,\000d\000a   submission_date DATE \000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE studentsDB ( 
+   id INT NOT NULL, 
+   f_name VARCHAR(25) NOT NULL, 
+   l_name VARCHAR(25) NOT NULL,
+   email VARCHAR(20) NOT NULL,
+   year VARCHAR(15) NOT NULL,
+   section VARCHAR(10) NOT NULL,
+   submission_date DATE 
+) [42001-212]
+2022-04-10 16:45:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE studentsDB ( \000d\000a   id INT NOT NULL, \000d\000a   fname VARCHAR(25) NOT NULL, \000d\000a   lname VARCHAR(25) NOT NULL,\000d\000a   email VARCHAR(20) NOT NULL,\000d\000a   [*]year VARCHAR(15) NOT NULL,\000d\000a   section VARCHAR(10) NOT NULL,\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE studentsDB ( 
+   id INT NOT NULL, 
+   fname VARCHAR(25) NOT NULL, 
+   lname VARCHAR(25) NOT NULL,
+   email VARCHAR(20) NOT NULL,
+   year VARCHAR(15) NOT NULL,
+   section VARCHAR(10) NOT NULL,
+) [42001-212]
+2022-04-10 16:45:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE students_DB ( \000d\000a   id INT NOT NULL, \000d\000a   fname VARCHAR(25) NOT NULL, \000d\000a   lname VARCHAR(25) NOT NULL,\000d\000a   email VARCHAR(20) NOT NULL,\000d\000a   [*]year VARCHAR(15) NOT NULL,\000d\000a   section VARCHAR(10) NOT NULL,\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE students_DB ( 
+   id INT NOT NULL, 
+   fname VARCHAR(25) NOT NULL, 
+   lname VARCHAR(25) NOT NULL,
+   email VARCHAR(20) NOT NULL,
+   year VARCHAR(15) NOT NULL,
+   section VARCHAR(10) NOT NULL,
+) [42001-212]
+2022-04-10 16:46:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE students_DB ( \000d\000a   id INT NOT NULL, \000d\000a   fname VARCHAR(25) NOT NULL, \000d\000a   lname VARCHAR(25) NOT NULL,\000d\000a   email VARCHAR(25) NOT NULL,\000d\000a   [*]year VARCHAR(25) NOT NULL,\000d\000a   section VARCHAR(25) NOT NULL,\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE students_DB ( 
+   id INT NOT NULL, 
+   fname VARCHAR(25) NOT NULL, 
+   lname VARCHAR(25) NOT NULL,
+   email VARCHAR(25) NOT NULL,
+   year VARCHAR(25) NOT NULL,
+   section VARCHAR(25) NOT NULL,
+) [42001-212]
+2022-04-10 16:46:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE students_DB ( \000d\000a   id INT NOT NULL, \000d\000a   fname VARCHAR(25) NOT NULL, \000d\000a   lname VARCHAR(25) NOT NULL,\000d\000a[*])"; expected "identifier"; SQL statement:
+CREATE TABLE students_DB ( 
+   id INT NOT NULL, 
+   fname VARCHAR(25) NOT NULL, 
+   lname VARCHAR(25) NOT NULL,
+) [42001-212]
+2022-04-10 16:49:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE students_db ( \000d\000a   id INT NOT NULL, \000d\000a   f_name VARCHAR(25) NOT NULL, \000d\000a   l_name VARCHAR(25) NOT NULL, \000d\000a   email VARCHAR(25) NOT NULL,\000d\000a   section VARCHAR(15) NOT NULL,\000d\000a   [*]year VARCHAR(10) NOT NULL,\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE students_db ( 
+   id INT NOT NULL, 
+   f_name VARCHAR(25) NOT NULL, 
+   l_name VARCHAR(25) NOT NULL, 
+   email VARCHAR(25) NOT NULL,
+   section VARCHAR(15) NOT NULL,
+   year VARCHAR(10) NOT NULL,
+) [42001-212]
+2022-04-10 16:50:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE students_db ( \000d\000a   id INT NOT NULL, \000d\000a   f_name VARCHAR(50) NOT NULL, \000d\000a   l_name VARCHAR(25) NOT NULL, \000d\000a   email VARCHAR(25) NOT NULL,\000d\000a   section VARCHAR(15) NOT NULL,\000d\000a   [*]year VARCHAR(10) NOT NULL,\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE students_db ( 
+   id INT NOT NULL, 
+   f_name VARCHAR(50) NOT NULL, 
+   l_name VARCHAR(25) NOT NULL, 
+   email VARCHAR(25) NOT NULL,
+   section VARCHAR(15) NOT NULL,
+   year VARCHAR(10) NOT NULL,
+) [42001-212]
+2022-04-10 16:50:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TUTORIALS_TBL" already exists; SQL statement:
+CREATE TABLE tutorials_tbl ( 
+   id INT NOT NULL, 
+   title VARCHAR(50) NOT NULL, 
+   author VARCHAR(20) NOT NULL, 
+   submission_date DATE 
+) [42101-212]
+2022-04-10 16:50:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE students_db ( \000d\000a   id INT NOT NULL, \000d\000a   f_name VARCHAR(25) NOT NULL, \000d\000a   l_name VARCHAR(25) NOT NULL, \000d\000a   email VARCHAR(25) NOT NULL,\000d\000a   section VARCHAR(15) NOT NULL,\000d\000a   [*]year VARCHAR(10) NOT NULL,\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE students_db ( 
+   id INT NOT NULL, 
+   f_name VARCHAR(25) NOT NULL, 
+   l_name VARCHAR(25) NOT NULL, 
+   email VARCHAR(25) NOT NULL,
+   section VARCHAR(15) NOT NULL,
+   year VARCHAR(10) NOT NULL,
+) [42001-212]
+2022-04-10 17:02:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CUSTOMERS" not found; SQL statement:
+INSERT INTO Customers (F_NAME, L_NAME, EMAIL, SECTION, YEAR)
+VALUES ('CHRISTIAN', 'DALAGAN', 'chandev0908@gmail.com', 'BSCS-2A', '2ND YEAR') [42102-212]
+2022-04-10 17:02:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CUSTOMERS" not found; SQL statement:
+INSERT INTO Customers (F_NAME, L_NAME, EMAIL, SECTION, YEAR) [42102-212]
+2022-04-10 17:05:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO STUDENTS_DB (F_NAME, L_NAME, EMAIL, SECTION, [*]YEAR)"; expected "identifier"; SQL statement:
+INSERT INTO STUDENTS_DB (F_NAME, L_NAME, EMAIL, SECTION, YEAR) [42001-212]
+2022-04-10 17:05:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO STUDENTS_DB (F_NAME, L_NAME, EMAIL, SECTION, [*]YEAR)F_NAME \000d\000aVALUES ('CHRISTIAN', 'DALAGAN', 'chandev0908@gmail.com', 'BSCS-2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO STUDENTS_DB (F_NAME, L_NAME, EMAIL, SECTION, YEAR)F_NAME 
+VALUES ('CHRISTIAN', 'DALAGAN', 'chandev0908@gmail.com', 'BSCS-2A', '2ND YEAR') [42001-212]
+2022-04-10 17:06:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO STUDENTS_DB (F_NAME, L_NAME, EMAIL, SECTION, [*]YEAR)\000d\000aVALUES ('CHRISTIAN', 'DALAGAN', 'chandev0908@gmail.com', 'BSCS-2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO STUDENTS_DB (F_NAME, L_NAME, EMAIL, SECTION, YEAR)
+VALUES ('CHRISTIAN', 'DALAGAN', 'chandev0908@gmail.com', 'BSCS-2A', '2ND YEAR') [42001-212]
+2022-04-10 17:06:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO STUDENTS_DB (F_NAME, L_NAME, EMAIL, SECTION, [*]YEAR)"; expected "identifier"; SQL statement:
+INSERT INTO STUDENTS_DB (F_NAME, L_NAME, EMAIL, SECTION, YEAR) [42001-212]
+2022-04-10 17:06:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO STUDENTS_DB (F_NAME, L_NAME, EMAIL, SECTION, [*]YEAR) VALUES ('CHRISTIAN', 'DALAGAN', 'chandev0908@gmail.com', 'BSCS-2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO STUDENTS_DB (F_NAME, L_NAME, EMAIL, SECTION, YEAR) VALUES ('CHRISTIAN', 'DALAGAN', 'chandev0908@gmail.com', 'BSCS-2A', '2ND YEAR') [42001-212]
+2022-04-10 17:07:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO STUDENTS_DB (F_NAME, L_NAME, EMAIL, SECTION, [*]YEAR) VALUES ('CHRISTIAN', 'DALAGAN', 'chandev0908@gmail.com', 'BSCS-2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO STUDENTS_DB (F_NAME, L_NAME, EMAIL, SECTION, YEAR) VALUES ('CHRISTIAN', 'DALAGAN', 'chandev0908@gmail.com', 'BSCS-2A', '2ND YEAR') [42001-212]
+2022-04-10 17:08:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO STUDENTS_DB VALUES ('CHRISTIAN', 'DALAGAN', 'chandev0908@gmail.com', 'BSCS-2A', '2ND YEAR') [21002-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:295)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:574)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-04-10 17:08:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "ID" not found; SQL statement:
+INSERT INTO STUDENTS_DB VALUES (id, 'CHRISTIAN', 'DALAGAN', 'chandev0908@gmail.com', 'BSCS-2A', '2ND YEAR') [42122-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:300)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:574)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-04-10 17:09:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "ID" not found; SQL statement:
+INSERT INTO STUDENTS_DB VALUES (ID, 'CHRISTIAN', 'DALAGAN', 'chandev0908@gmail.com', 'BSCS-2A', '2ND YEAR') [42122-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:300)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:574)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-04-10 17:09:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO STUDENTS_DB VALUES ('CHRISTIAN', 'DALAGAN', 'chandev0908@gmail.com', 'BSCS-2A', '2ND YEAR') [21002-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:295)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:574)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-04-10 18:43:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Duplicate column name "SECTION"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, section, year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', 2ND YEAR) [42121-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1251)
+	at org.h2.command.Parser.parseInsert(Parser.java:1650)
+	at org.h2.command.Parser.parsePrepared(Parser.java:814)
+	at org.h2.command.Parser.parse(Parser.java:691)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:568)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-04-10 18:43:12 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', 2ND YEAR)"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', 2ND YEAR) [42001-212]
+2022-04-10 18:45:49 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (id, f_name, l_name, email, section, [*]year) VALUES (1,'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', 2ND YEAR)"; expected "identifier"; SQL statement:
+INSERT INTO students_db (id, f_name, l_name, email, section, year) VALUES (1,'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', 2ND YEAR) [42001-212]
+2022-04-10 18:45:56 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (id, f_name, l_name, email, section, [*]year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', 2ND YEAR)"; expected "identifier"; SQL statement:
+INSERT INTO students_db (id, f_name, l_name, email, section, year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', 2ND YEAR) [42001-212]
+2022-04-10 18:46:14 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', 2ND YEAR)"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', 2ND YEAR) [42001-212]
+2022-04-10 18:46:32 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', 2ND YEAR)"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', 2ND YEAR) [42001-212]
+2022-04-10 18:47:17 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) \000d\000aVALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', 2ND YEAR)"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) 
+VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', 2ND YEAR) [42001-212]
+2022-04-10 18:47:31 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) \000d\000aVALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) 
+VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2ND YEAR') [42001-212]
+2022-04-10 18:47:59 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) \000d\000aVALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) 
+VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR') [42001-212]
+2022-04-10 18:48:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) \000d\000aVALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) 
+VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR') [42001-212]
+2022-04-10 18:48:01 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) \000d\000aVALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) 
+VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR') [42001-212]
+2022-04-10 18:48:01 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) \000d\000aVALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) 
+VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR') [42001-212]
+2022-04-10 18:48:01 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) \000d\000aVALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) 
+VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR') [42001-212]
+2022-04-10 18:48:29 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) \000d\000aVALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) 
+VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR') [42001-212]
+2022-04-10 18:48:30 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) \000d\000aVALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) 
+VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR') [42001-212]
+2022-04-10 18:48:30 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) \000d\000aVALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) 
+VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR') [42001-212]
+2022-04-10 18:48:31 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) \000d\000aVALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) 
+VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR') [42001-212]
+2022-04-10 18:49:11 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (id, f_name, l_name, email, section, [*]year) \000d\000aVALUES (1, 'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_db (id, f_name, l_name, email, section, year) 
+VALUES (1, 'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR') [42001-212]
+2022-04-10 18:49:35 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (id, f_name, l_name, email, section, [*]year) \000d\000aVALUES (1, Christian, Dalagan, chandev0908@gmail.com, BSCS2A, 2NDYEAR)"; expected "identifier"; SQL statement:
+INSERT INTO students_db (id, f_name, l_name, email, section, year) 
+VALUES (1, Christian, Dalagan, chandev0908@gmail.com, BSCS2A, 2NDYEAR) [42001-212]
+2022-04-10 18:49:48 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_db (f_name, l_name, email, section, [*]year) \000d\000aVALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_db (f_name, l_name, email, section, year) 
+VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A', '2NDYEAR') [42001-212]
+2022-04-10 18:52:21 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "STUDENTS_DB" already exists; SQL statement:
+CREATE TABLE `students_db` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`f_name` TEXT(25) NOT NULL DEFAULT NULL,
+	`l_name` TEXT(25) NOT NULL DEFAULT NULL,
+	`email` TEXT(25) NOT NULL DEFAULT NULL,
+	`section` TEXT(50) NOT NULL DEFAULT NULL,
+	`year` TEXT(15) NOT NULL DEFAULT NULL
+) [42101-212]
+2022-04-10 18:52:48 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs (f_name, l_name, email, section, [*]year) \000d\000aVALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A',  '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs (f_name, l_name, email, section, year) 
+VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A',  '2NDYEAR') [42001-212]
+2022-04-10 18:53:15 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs (id, f_name, l_name, email, section, [*]year) \000d\000aVALUES (1, 'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A',  '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs (id, f_name, l_name, email, section, year) 
+VALUES (1, 'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A',  '2NDYEAR') [42001-212]
+2022-04-10 18:53:20 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs (id, f_name, l_name, email, section, [*]year) \000d\000aVALUES (1, 'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A',  '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs (id, f_name, l_name, email, section, year) 
+VALUES (1, 'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A',  '2NDYEAR') [42001-212]
+2022-04-10 18:53:21 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs (id, f_name, l_name, email, section, [*]year) \000d\000aVALUES (1, 'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A',  '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs (id, f_name, l_name, email, section, year) 
+VALUES (1, 'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A',  '2NDYEAR') [42001-212]
+2022-04-10 18:53:22 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs (id, f_name, l_name, email, section, [*]year) \000d\000aVALUES (1, 'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A',  '2NDYEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs (id, f_name, l_name, email, section, year) 
+VALUES (1, 'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS2A',  '2NDYEAR') [42001-212]
+2022-04-10 23:50:15 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into students_db values (1, 'christian', 'dalagan', [*]'chandev0908)"; SQL statement:
+insert into students_db values (1, 'christian', 'dalagan', 'chandev0908) [42000-212]
+2022-04-10 23:51:12 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+insert into students_db values ('christian', 'dalagan', 'chandev0908@gmail.com','BSCS2A','2NDYEAR') [21002-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:295)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:574)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-04-10 23:51:22 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into students_db values (id [*]'christian', 'dalagan', 'chandev0908@gmail.com','BSCS2A','2NDYEAR')"; expected "(, ., [, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+insert into students_db values (id 'christian', 'dalagan', 'chandev0908@gmail.com','BSCS2A','2NDYEAR') [42001-212]
+2022-04-11 00:01:03 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE students_dbs(\000d\000a    studID int NOT NULL AUTO_INCREMENT,\000d\000a    firstName varchar(50) NOT NULL,\000d\000a    lastName varchar(50) NOT NULL,\000d\000a    email VARCHAR(50) NOT NULL,\000d\000a    course VARCHAR(50) NOT NULL,\000d\000a    section VARCHAR(25) NOT NULL,\000d\000a    [*]year VARCHAR(25) NOT NULL,\000d\000a    PRIMARY KEY (studID)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE students_dbs(
+    studID int NOT NULL AUTO_INCREMENT,
+    firstName varchar(50) NOT NULL,
+    lastName varchar(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    course VARCHAR(50) NOT NULL,
+    section VARCHAR(25) NOT NULL,
+    year VARCHAR(25) NOT NULL,
+    PRIMARY KEY (studID)
+) [42001-212]
+2022-04-11 00:03:53 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO STUDENTS_DBS VALUES (`CHRISTIAN`, `DALAGAN`, `chadev0908@gmail.com`, [*]'BSCS`, `2A`, `2ND YEAR`)"; SQL statement:
+INSERT INTO STUDENTS_DBS VALUES (`CHRISTIAN`, `DALAGAN`, `chadev0908@gmail.com`, 'BSCS`, `2A`, `2ND YEAR`) [42000-212]
+2022-04-11 00:04:12 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO STUDENTS_DBS VALUES (`CHRISTIAN`, `DALAGAN`, `chadev0908@gmail.com`, [*]'BSCS`, `2A`, `2ND YEAR`);"; SQL statement:
+INSERT INTO STUDENTS_DBS VALUES (`CHRISTIAN`, `DALAGAN`, `chadev0908@gmail.com`, 'BSCS`, `2A`, `2ND YEAR`); [42000-212]
+2022-04-11 00:04:35 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO STUDENTS_DBS VALUES ('CHRISTIAN', 'DALAGAN', 'chadev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [21002-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:295)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:574)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-04-11 00:05:18 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE STUDENTS_DBS [*]AUTO_INCREMENT"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+ALTER TABLE STUDENTS_DBS AUTO_INCREMENT [42001-212]
+2022-04-11 00:05:28 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE STUDENTS_DBS [*]AUTO_INCREMENT=1"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+ALTER TABLE STUDENTS_DBS AUTO_INCREMENT=1 [42001-212]
+2022-04-11 00:05:50 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE STUDENTS_DBS [*]AUTO_INCREMENT=1"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+ALTER TABLE STUDENTS_DBS AUTO_INCREMENT=1 [42001-212]
+2022-04-11 00:06:17 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO STUDENTS_DBS (FIRSTNAME, LASTNAME, EMAIL, COURSE, SECTION, [*]YEAR) VALUES ('CHRISTIAN', 'DALAGAN', 'chadev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO STUDENTS_DBS (FIRSTNAME, LASTNAME, EMAIL, COURSE, SECTION, YEAR) VALUES ('CHRISTIAN', 'DALAGAN', 'chadev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:06:35 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO STUDENTS_DBS (FIRSTNAME, LASTNAME, EMAIL, COURSE, SECTION, [*]YEAR) VALUES ('CHRISTIAN', 'DALAGAN', 'chadev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO STUDENTS_DBS (FIRSTNAME, LASTNAME, EMAIL, COURSE, SECTION, YEAR) VALUES ('CHRISTIAN', 'DALAGAN', 'chadev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:08:15 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO STUDENTS_DBS VALUES ('CHRISTIAN', 'DALAGAN', 'chadev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [21002-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:295)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:574)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-04-11 00:12:49 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE `students_dbs`(\000d\000a    `studID` int AUTO_INCREMENT,\000d\000a    `firstName` varchar(50) NOT NULL,\000d\000a    `lastName` varchar(50) NOT NULL,\000d\000a    `email` VARCHAR(50) NOT NULL,\000d\000a    `course` VARCHAR(50) NOT NULL,\000d\000a    `section` VARCHAR(25) NOT NULL,\000d\000a    `year` VARCHAR(25) NOT NULL,\000d\000a[*])"; expected "identifier"; SQL statement:
+CREATE TABLE `students_dbs`(
+    `studID` int AUTO_INCREMENT,
+    `firstName` varchar(50) NOT NULL,
+    `lastName` varchar(50) NOT NULL,
+    `email` VARCHAR(50) NOT NULL,
+    `course` VARCHAR(50) NOT NULL,
+    `section` VARCHAR(25) NOT NULL,
+    `year` VARCHAR(25) NOT NULL,
+) [42001-212]
+2022-04-11 00:13:07 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE `students_dbs`(\000d\000a    `studID` int [*]NOT_NULL AUTO_INCREMENT,\000d\000a    `firstName` varchar(50) NOT NULL,\000d\000a    `lastName` varchar(50) NOT NULL,\000d\000a    `email` VARCHAR(50) NOT NULL,\000d\000a    `course` VARCHAR(50) NOT NULL,\000d\000a    `section` VARCHAR(25) NOT NULL,\000d\000a    `year` VARCHAR(25) NOT NULL,\000d\000a)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, DEFAULT, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE `students_dbs`(
+    `studID` int NOT_NULL AUTO_INCREMENT,
+    `firstName` varchar(50) NOT NULL,
+    `lastName` varchar(50) NOT NULL,
+    `email` VARCHAR(50) NOT NULL,
+    `course` VARCHAR(50) NOT NULL,
+    `section` VARCHAR(25) NOT NULL,
+    `year` VARCHAR(25) NOT NULL,
+) [42001-212]
+2022-04-11 00:15:15 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO students_dbs VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [21002-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:295)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:574)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-04-11 00:15:42 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs (firstname, lastname, email, course, section, [*]year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs (firstname, lastname, email, course, section, year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:16:04 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs(firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs(firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:16:36 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs(firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs(firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:18:28 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs(firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs(firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:18:29 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs(firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs(firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:18:30 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs(firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs(firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:18:32 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs(firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs(firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:18:32 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs(firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs(firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:19:11 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs(firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs(firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:19:12 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs(firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs(firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:19:13 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs(firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs(firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:19:14 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs(firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs(firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:20:51 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs(firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs(firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:22:52 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO students_dbs VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [21002-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:295)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:574)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-04-11 00:22:56 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs VALUES(ID [*]'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "(, ., [, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO students_dbs VALUES(ID 'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:23:03 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs VALUES(1[*]'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO students_dbs VALUES(1'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:23:09 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs VALUES(5[*]'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO students_dbs VALUES(5'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:23:10 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs VALUES(5[*]'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO students_dbs VALUES(5'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:23:10 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs VALUES(5[*]'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO students_dbs VALUES(5'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:23:19 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs VALUES(2[*]'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO students_dbs VALUES(2'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:24:42 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs (firstname, lastname, email, course, section, [*]year) VALUES(1,'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs (firstname, lastname, email, course, section, year) VALUES(1,'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:24:46 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs (firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs (firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:24:47 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs (firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs (firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:24:48 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs (firstname, lastname, email, course, section, [*]year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs (firstname, lastname, email, course, section, year) VALUES('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:25:52 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs VALUES(default [*]'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected ",, )"; SQL statement:
+INSERT INTO students_dbs VALUES(default 'Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:26:48 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs (firstname, lastname, email, course, section, [*]year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs (firstname, lastname, email, course, section, year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:26:50 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs (firstname, lastname, email, course, section, [*]year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs (firstname, lastname, email, course, section, year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:26:51 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs (firstname, lastname, email, course, section, [*]year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs (firstname, lastname, email, course, section, year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:26:52 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO students_dbs (firstname, lastname, email, course, section, [*]year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR')"; expected "identifier"; SQL statement:
+INSERT INTO students_dbs (firstname, lastname, email, course, section, year) VALUES ('Christian', 'Dalagan', 'chandev0908@gmail.com', 'BSCS', '2A', '2ND YEAR') [42001-212]
+2022-04-11 00:35:29 jdbc[6]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-212]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
+	at org.h2.server.web.WebApp.test(WebApp.java:972)
+	at org.h2.server.web.WebApp.process(WebApp.java:241)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 13 more
+2022-04-11 03:25:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Parameter "#3" is not set; SQL statement:
+INSERT INTO students_dbs VALUES (default, ?, ?, ?, ?, ?, ?) [90012-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:75)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:186)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:164)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:254)
+	at cs.pages.StudentData.setTableData(StudentData.java:217)
+	at cs.pages.StudentData.<init>(StudentData.java:50)
+	at cs.primaries.Application.setReferencePages(Application.java:102)
+	at cs.primaries.Application.<init>(Application.java:65)
+	at cs.primaries.Application$1.run(Application.java:39)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2022-04-11 03:27:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Parameter "#1" is not set; SQL statement:
+INSERT INTO students_dbs VALUES (default, ?, ?, ?, ?, ?, ?) [90012-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:75)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:186)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:255)
+	at org.h2.command.Command.executeQuery(Command.java:190)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:128)
+	at cs.pages.StudentData.setTableData(StudentData.java:210)
+	at cs.pages.StudentData.<init>(StudentData.java:50)
+	at cs.primaries.Application.setReferencePages(Application.java:102)
+	at cs.primaries.Application.<init>(Application.java:65)
+	at cs.primaries.Application$1.run(Application.java:39)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2022-04-11 03:33:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "id" not found [42122-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3492)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:301)
+	at cs.pages.StudentData.setTableData(StudentData.java:215)
+	at cs.pages.StudentData.<init>(StudentData.java:50)
+	at cs.primaries.Application.setReferencePages(Application.java:102)
+	at cs.primaries.Application.<init>(Application.java:65)
+	at cs.primaries.Application$1.run(Application.java:39)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2022-04-11 03:43:34 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Christian Dev/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:228)
+	at cs.db.ConnectionDB.getConnection(ConnectionDB.java:11)
+	at cs.pages.StudentData.setTableData(StudentData.java:207)
+	at cs.pages.StudentData.<init>(StudentData.java:50)
+	at cs.primaries.Application.setReferencePages(Application.java:102)
+	at cs.primaries.Application.<init>(Application.java:65)
+	at cs.primaries.Application$1.run(Application.java:39)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Christian Dev/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 36 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Christian Dev/test.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 30 more
+2022-04-11 03:44:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TABLE_NAME" not found; SQL statement:
+SELECT name FROM table_name WHERE id > ? ORDER BY id [42102-212]
+2022-04-11 03:45:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Parameter "#1" is not set; SQL statement:
+SELECT firstname FROM students_dbs WHERE studid > ? ORDER BY studid [90012-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:75)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:186)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:255)
+	at org.h2.command.Command.executeQuery(Command.java:190)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:128)
+	at cs.pages.StudentData.setTableData(StudentData.java:218)
+	at cs.pages.StudentData.<init>(StudentData.java:50)
+	at cs.primaries.Application.setReferencePages(Application.java:102)
+	at cs.primaries.Application.<init>(Application.java:65)
+	at cs.primaries.Application$1.run(Application.java:39)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2022-04-11 03:46:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "5" for parameter "columnIndex" [90008-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:298)
+	at org.h2.jdbc.JdbcResultSet.checkColumnIndex(JdbcResultSet.java:3524)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:283)
+	at cs.pages.StudentData.setTableData(StudentData.java:221)
+	at cs.pages.StudentData.<init>(StudentData.java:50)
+	at cs.primaries.Application.setReferencePages(Application.java:102)
+	at cs.primaries.Application.<init>(Application.java:65)
+	at cs.primaries.Application$1.run(Application.java:39)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2022-04-11 03:48:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "5" for parameter "columnIndex" [90008-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:298)
+	at org.h2.jdbc.JdbcResultSet.checkColumnIndex(JdbcResultSet.java:3524)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:283)
+	at cs.pages.StudentData.setTableData(StudentData.java:221)
+	at cs.pages.StudentData.<init>(StudentData.java:50)
+	at cs.primaries.Application.setReferencePages(Application.java:102)
+	at cs.primaries.Application.<init>(Application.java:65)
+	at cs.primaries.Application$1.run(Application.java:39)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2022-04-11 11:54:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "4" for parameter "columnIndex" [90008-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:298)
+	at org.h2.jdbc.JdbcResultSet.checkColumnIndex(JdbcResultSet.java:3524)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:283)
+	at cs.pages.StudentData.setTableData(StudentData.java:221)
+	at cs.pages.StudentData.<init>(StudentData.java:50)
+	at cs.primaries.Application.setReferencePages(Application.java:102)
+	at cs.primaries.Application.<init>(Application.java:65)
+	at cs.primaries.Application$1.run(Application.java:39)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2022-04-11 11:54:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "0" for parameter "columnIndex" [90008-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:298)
+	at org.h2.jdbc.JdbcResultSet.checkColumnIndex(JdbcResultSet.java:3524)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:283)
+	at cs.pages.StudentData.setTableData(StudentData.java:221)
+	at cs.pages.StudentData.<init>(StudentData.java:50)
+	at cs.primaries.Application.setReferencePages(Application.java:102)
+	at cs.primaries.Application.<init>(Application.java:65)
+	at cs.primaries.Application$1.run(Application.java:39)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2022-04-11 13:06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "1" for parameter "parameterIndex" [90008-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:298)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1395)
+	at org.h2.jdbc.JdbcPreparedStatement.setInt(JdbcPreparedStatement.java:359)
+	at cs.pages.StudentData.setTableData(StudentData.java:211)
+	at cs.pages.StudentData.<init>(StudentData.java:50)
+	at cs.primaries.Application.setReferencePages(Application.java:102)
+	at cs.primaries.Application.<init>(Application.java:65)
+	at cs.primaries.Application$1.run(Application.java:39)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2022-04-11 13:06:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "1" for parameter "parameterIndex" [90008-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:298)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1395)
+	at org.h2.jdbc.JdbcPreparedStatement.setInt(JdbcPreparedStatement.java:359)
+	at cs.pages.StudentData.setTableData(StudentData.java:211)
+	at cs.pages.StudentData.<init>(StudentData.java:50)
+	at cs.primaries.Application.setReferencePages(Application.java:102)
+	at cs.primaries.Application.<init>(Application.java:65)
+	at cs.primaries.Application$1.run(Application.java:39)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
