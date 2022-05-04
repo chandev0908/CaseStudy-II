@@ -24,27 +24,28 @@ public class DeleteStudentController implements MouseInputListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         // TODO Auto-generated method stub
-        // switch (model.getSelectedRow()) {
-        //     case -1:
-        //         JOptionPane.showMessageDialog(null, "You need to click what row you want to delete first!");
-        //         break;
-        //     default:
-        //         ConnectionDB db = new ConnectionDB();
-        //         Connection cn = db.getConnection();
-        //         String query = "DELETE FROM students_dbs WHERE studid = ?;";
-        //         try {
-        //             PreparedStatement st = cn.prepareStatement(query);
-        //             st.setInt(1, sdm.getID(model.getSelectedRow()));
-        //             if (!st.execute()) {
-        //                 System.out.println("Deleted!");
+        switch (model.getSelectedRow()) {
+            case -1:
+                JOptionPane.showMessageDialog(null, "You need to click what row you want to delete first!");
+                break;
+            default:
+                ConnectionDB db = new ConnectionDB();
+                Connection cn = db.getConnection();
+                String query = "DELETE FROM students_dbs WHERE studid = ?;";
+                try {
+                    PreparedStatement st = cn.prepareStatement(query);
+                    st.setInt(1, sdm.getID(model.getSelectedRow()));
+                    if (!st.execute()) {
+                        sdm.removeID(model.getSelectedRow());
+                        JOptionPane.showMessageDialog(null, "Successfully Deleted");
                         model.removeRow(model.getSelectedRow());
-                //     } else {
-                //         System.out.println("Error not deleted!");
-                //     }
-                // } catch (Exception ex) {
-                //     JOptionPane.showMessageDialog(null, "Error: " + ex);
-                // }
-        // }
+                    } else {
+                        System.out.println("Error not deleted!");
+                    }
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Error: " + ex);
+                }
+        }
     }
 
     @Override

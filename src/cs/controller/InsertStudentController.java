@@ -1,7 +1,9 @@
 package cs.controller;
 
+import java.security.interfaces.RSAKey;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -83,12 +85,16 @@ public class InsertStudentController implements MouseInputListener {
                 st.setString(4, sdm.getTxtCourse());
                 st.setString(5, sdm.getTxtSection());
                 st.setString(6, sdm.getTxtYear());
-                if (st.execute()) {
-                    model.addRow(new Object[] { sdm.getTxtFName(), sdm.getTxtLName(), sdm.gettxtEmail(),
-                            sdm.getTxtCourse(), sdm.getTxtSection(), sdm.getTxtYear(),
-                            CTable.StatusType.PENDING });
-                }
+                st.execute();
+                model.addRow(new Object[] { sdm.getTxtFName(), sdm.getTxtLName(), sdm.gettxtEmail(), sdm.getTxtCourse(),
+                        sdm.getTxtSection(), sdm.getTxtYear(), CTable.StatusType.PENDING });
 
+                String query2 = "SELECT MAX(STUDID) FROM STUDENTS_DBS;";
+                PreparedStatement st2 = cn.prepareStatement(query2);
+                ResultSet rs2 = st2.executeQuery();
+                if(rs2.next()){
+                    sdm.addID(rs2.getInt(1));
+                }
             } catch (Exception err) {
                 JOptionPane.showMessageDialog(null, "Database error: " + err);
             }

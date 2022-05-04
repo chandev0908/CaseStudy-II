@@ -242,9 +242,9 @@ public class StudentData extends Page {
 			int count = 0;
 
 			while (rs.next()) {
-				System.out.println("array: " + sdm.getID(count));
 				count++;
-				// sdm.addID(rs.getInt("studid"));
+				sdm.addID(rs.getInt("studid"));
+				System.out.println("array: " + rs.getInt("studid"));
 				table.addRow(new Object[] { rs.getString("firstname"), rs.getString("lastname"), rs.getString("email"),
 						rs.getString("course"), rs.getString("section"), rs.getString("year"),
 						CTable.StatusType.PENDING });
