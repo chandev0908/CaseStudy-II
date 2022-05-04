@@ -3,19 +3,16 @@ package cs.pages;
 import java.awt.Color;
 import java.awt.Font;
 
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JDateChooser;
 
 import cs.components.CScrollBar;
-import cs.components.CTable;
 import cs.components.Page;
 
 import javax.swing.JEditorPane;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 public class Compose extends Page{
 

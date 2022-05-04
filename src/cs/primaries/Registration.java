@@ -3,8 +3,6 @@ package cs.primaries;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
@@ -24,7 +22,6 @@ import javax.swing.border.BevelBorder;
 import java.awt.Cursor;
 import javax.swing.border.LineBorder;
 import javax.swing.border.CompoundBorder;
-import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 
 @SuppressWarnings("serial")

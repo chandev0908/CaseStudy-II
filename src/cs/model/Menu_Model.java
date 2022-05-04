@@ -1,7 +1,6 @@
 package cs.model;
 
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 
 import cs.components.ImageManager;
 

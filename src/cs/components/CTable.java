@@ -42,7 +42,8 @@ public class CTable extends JTable {
 		}
 		
 	}
-	//Inner Component Class for TableHeader
+    
+    //Inner Component Class for TableHeader
 	private class TableHeader extends JLabel {
 
 		String hex_one = "#955982", hex_two = "#557e99";
@@ -69,7 +70,7 @@ public class CTable extends JTable {
     	final DefaultTableCellRenderer ItemCellRenderer =	new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable jtable, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-                if (column != 4) {
+                if (column != 6) {
                     Component com = super.getTableCellRendererComponent(jtable, value, isSelected, hasFocus, row, column);
                     com.setBackground(Color.WHITE);
                     setBorder(noFocusBorder);
@@ -113,5 +114,10 @@ public class CTable extends JTable {
     public void addRow(Object[] row) {
         DefaultTableModel model = (DefaultTableModel) getModel();
         model.addRow(row);
+    }
+    // Delete rows
+	public void removeRow(int row){
+        DefaultTableModel model = (DefaultTableModel) getModel();
+        model.removeRow(row);
     }
 }
