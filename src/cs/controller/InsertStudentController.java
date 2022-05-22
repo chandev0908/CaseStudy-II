@@ -39,7 +39,7 @@ public class InsertStudentController implements MouseInputListener {
         this.insertLbl = insertLbl;
         this.model = table;
     }
-
+    // For checking fields empty or not
     public boolean emptyFields() {
         if (txtFName.getText().isEmpty()) {
             return false;

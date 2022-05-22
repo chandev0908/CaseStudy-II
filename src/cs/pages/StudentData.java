@@ -2,6 +2,7 @@ package cs.pages;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.KeyListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,6 +17,8 @@ import cs.components.CTable;
 import cs.components.ImageManager;
 import cs.components.Page;
 import cs.controller.DeleteStudentController;
+import cs.controller.EditStudentController;
+import cs.controller.ExportStudentController;
 import cs.controller.InsertStudentController;
 import cs.db.ConnectionDB;
 import cs.model.StudentDataModel;
@@ -35,10 +38,10 @@ public class StudentData extends Page {
 
 				},
 				new String[] {
-						"First Name", "Last Name", "Email", "Course", "Year", "Section", "Status"
+						"First Name", "Last Name", "Email", "Course", "Section", "Year", "Status"
 				}) {
 			boolean[] canEdit = new boolean[] {
-					false, false, false, false, false, false, false
+					true, true, true, true, true, true, false
 			};
 
 			public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -230,6 +233,10 @@ public class StudentData extends Page {
 		lblInsert.addMouseListener(insertController);
 		DeleteStudentController deleteController = new DeleteStudentController(lblDelete, table);
 		lblDelete.addMouseListener(deleteController);
+		EditStudentController editController = new EditStudentController(lblEdit, table);
+		lblEdit.addMouseListener(editController);
+		ExportStudentController exportController = new ExportStudentController(lblExport, table);
+		lblExport.addMouseListener(exportController);
 	}
 
 	private void setTableData() {
@@ -240,7 +247,6 @@ public class StudentData extends Page {
 			PreparedStatement st = cn.prepareStatement(query);
 			ResultSet rs = st.executeQuery();
 			int count = 0;
-
 			while (rs.next()) {
 				count++;
 				sdm.addID(rs.getInt("studid"));

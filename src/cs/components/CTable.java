@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.ChangeEvent;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
@@ -119,5 +120,10 @@ public class CTable extends JTable {
 	public void removeRow(int row){
         DefaultTableModel model = (DefaultTableModel) getModel();
         model.removeRow(row);
+    }
+    @Override
+    public void editingStopped(ChangeEvent e) {
+        // TODO Auto-generated method stub
+        super.editingStopped(e);
     }
 }

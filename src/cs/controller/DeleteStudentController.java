@@ -39,6 +39,7 @@ public class DeleteStudentController implements MouseInputListener {
                         sdm.removeID(model.getSelectedRow());
                         JOptionPane.showMessageDialog(null, "Successfully Deleted");
                         model.removeRow(model.getSelectedRow());
+                        model.addNotify();
                     } else {
                         System.out.println("Error not deleted!");
                     }

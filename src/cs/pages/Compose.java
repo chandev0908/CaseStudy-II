@@ -10,6 +10,7 @@ import com.toedter.calendar.JDateChooser;
 
 import cs.components.CScrollBar;
 import cs.components.Page;
+import cs.controller.SendEmailController;
 
 import javax.swing.JEditorPane;
 import javax.swing.JLabel;
@@ -31,25 +32,25 @@ public class Compose extends Page{
 		scrollPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		scrollPanel.add(scrollPane);
 		
-		JEditorPane editorPane = new JEditorPane();
-		scrollPane.setViewportView(editorPane);
-		editorPane.setForeground(Color.WHITE);
-		editorPane.setBackground(Color.decode("#212d3a"));
+		JEditorPane txtCompose = new JEditorPane();
+		scrollPane.setViewportView(txtCompose);
+		txtCompose.setForeground(Color.WHITE);
+		txtCompose.setBackground(Color.decode("#212d3a"));
 		
-		JLabel lblUpdate = new JLabel();
-		lblUpdate.setText("Save");
-		lblUpdate.setForeground(Color.WHITE);
-		lblUpdate.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblUpdate.setBounds(653, 124, 75, 35);
-		scrollPanel.add(lblUpdate);
+		JLabel lblSave = new JLabel();
+		lblSave.setText("Save");
+		lblSave.setForeground(Color.WHITE);
+		lblSave.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblSave.setBounds(653, 124, 75, 35);
+		scrollPanel.add(lblSave);
 		
-		JLabel lblDelete = new JLabel();
-		lblDelete.setText("Send");
-		lblDelete.setForeground(Color.WHITE);
-		lblDelete.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblDelete.setBounds(738, 124, 75, 35);
-		scrollPanel.add(lblDelete);
-		
+		JLabel lblSend = new JLabel();
+		lblSend.setText("Send");
+		lblSend.setForeground(Color.WHITE);
+		lblSend.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblSend.setBounds(738, 124, 75, 35);
+		scrollPanel.add(lblSend);
+
 		JLabel lblView = new JLabel();
 		lblView.setText("View");
 		lblView.setForeground(Color.WHITE);
@@ -64,23 +65,23 @@ public class Compose extends Page{
 		lblSubject.setBounds(58, 24, 102, 35);
 		scrollPanel.add(lblSubject);
 		
-		JTextField textField = new JTextField();
-		textField.setForeground(Color.WHITE);
-		textField.setFont(new Font("SansSerif", Font.PLAIN, 14));
-		textField.setColumns(10);
-		textField.setBorder(new EmptyBorder(0, 0, 0, 0));
-		textField.setBackground(new Color(33, 45, 58));
-		textField.setBounds(170, 32, 257, 24);
-		scrollPanel.add(textField);
+		JTextField txtSubject = new JTextField();
+		txtSubject.setForeground(Color.WHITE);
+		txtSubject.setFont(new Font("SansSerif", Font.PLAIN, 14));
+		txtSubject.setColumns(10);
+		txtSubject.setBorder(new EmptyBorder(0, 0, 0, 0));
+		txtSubject.setBackground(new Color(33, 45, 58));
+		txtSubject.setBounds(170, 32, 257, 24);
+		scrollPanel.add(txtSubject);
 		
-		JTextField textField_1 = new JTextField();
-		textField_1.setForeground(Color.WHITE);
-		textField_1.setFont(new Font("SansSerif", Font.PLAIN, 14));
-		textField_1.setColumns(10);
-		textField_1.setBorder(new EmptyBorder(0, 0, 0, 0));
-		textField_1.setBackground(new Color(33, 45, 58));
-		textField_1.setBounds(170, 78, 257, 24);
-		scrollPanel.add(textField_1);
+		JTextField txtRecipient = new JTextField();
+		txtRecipient.setForeground(Color.WHITE);
+		txtRecipient.setFont(new Font("SansSerif", Font.PLAIN, 14));
+		txtRecipient.setColumns(10);
+		txtRecipient.setBorder(new EmptyBorder(0, 0, 0, 0));
+		txtRecipient.setBackground(new Color(33, 45, 58));
+		txtRecipient.setBounds(170, 78, 257, 24);
+		scrollPanel.add(txtRecipient);
 		
 		JLabel lblRecipient = new JLabel();
 		lblRecipient.setText("Recipient:");
@@ -107,9 +108,9 @@ public class Compose extends Page{
 		lblDate.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblDate.setBounds(493, 24, 75, 35);
 		scrollPanel.add(lblDate);
-		
-	
-		
-		
+
+		// Mouse Listener for Send
+		SendEmailController sendController = new SendEmailController(txtCompose, txtSubject, txtRecipient);
+		lblSend.addMouseListener(sendController);
 	}
 }

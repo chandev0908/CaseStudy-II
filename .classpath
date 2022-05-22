@@ -13,5 +13,8 @@
 	<classpathentry kind="lib" path="jgoodies-common-1.2.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Christian Dev/Desktop/Java/ComprogCS/h2-2.1.212.jar"/>
 	<classpathentry kind="src" path="db"/>
+	<classpathentry kind="lib" path="activation.jar"/>
+	<classpathentry kind="lib" path="itextpdf-5.5.9.jar"/>
+	<classpathentry kind="lib" path="javax.mail.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
