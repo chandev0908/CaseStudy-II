@@ -1,29 +1,31 @@
 package cs.pages;
 
 import java.awt.Color;
+import java.awt.Cursor;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import cs.components.CScrollBar;
+import cs.components.ImageManager;
 import cs.components.Page;
+import cs.controller.PasswordVisibilityController;
+import cs.primaries.LogIn;
 
 import javax.swing.JTextField;
 import java.awt.Font;
 
 public class Profile extends Page {
 	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JPasswordField passwordField;
+	private JLabel VisibilityButton;
+	ImageManager IM = new ImageManager();
 
-	/**
-	 * Create the panel.
-	 */
 	public Profile() {
 	
 		
@@ -69,49 +71,24 @@ public class Profile extends Page {
 		textField.setColumns(10);
 		textField.setBorder(new EmptyBorder(0, 0, 0, 0));
 		textField.setBackground(new Color(33, 45, 58));
-		textField.setBounds(119, 82, 257, 24);
+		textField.setBounds(119, 39, 257, 24);
 		scrollPanel.add(textField);
 		
 		JLabel lblSection = new JLabel();
 		lblSection.setText("Email:");
 		lblSection.setForeground(Color.WHITE);
 		lblSection.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblSection.setBounds(34, 74, 75, 35);
+		lblSection.setBounds(34, 31, 75, 35);
 		scrollPanel.add(lblSection);
 		
-		textField_1 = new JTextField();
-		textField_1.setForeground(Color.WHITE);
-		textField_1.setFont(new Font("SansSerif", Font.PLAIN, 14));
-		textField_1.setColumns(10);
-		textField_1.setBorder(new EmptyBorder(0, 0, 0, 0));
-		textField_1.setBackground(new Color(33, 45, 58));
-		textField_1.setBounds(119, 39, 257, 24);
-		scrollPanel.add(textField_1);
-		
-		JLabel lblName = new JLabel();
-		lblName.setText("Name:");
-		lblName.setForeground(Color.WHITE);
-		lblName.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblName.setBounds(34, 31, 75, 35);
-		scrollPanel.add(lblName);
-		
-		textField_2 = new JTextField();
-		textField_2.setForeground(Color.WHITE);
-		textField_2.setFont(new Font("SansSerif", Font.PLAIN, 14));
-		textField_2.setColumns(10);
-		textField_2.setBorder(new EmptyBorder(0, 0, 0, 0));
-		textField_2.setBackground(new Color(33, 45, 58));
-		textField_2.setBounds(602, 82, 257, 24);
-		scrollPanel.add(textField_2);
-		
-		textField_3 = new JTextField();
-		textField_3.setForeground(Color.WHITE);
-		textField_3.setFont(new Font("SansSerif", Font.PLAIN, 14));
-		textField_3.setColumns(10);
-		textField_3.setBorder(new EmptyBorder(0, 0, 0, 0));
-		textField_3.setBackground(new Color(33, 45, 58));
-		textField_3.setBounds(602, 39, 257, 24);
-		scrollPanel.add(textField_3);
+		passwordField = new JPasswordField();
+		passwordField.setForeground(Color.WHITE);
+		passwordField.setFont(new Font("SansSerif", Font.PLAIN, 14));
+		passwordField.setColumns(10);
+		passwordField.setBorder(new EmptyBorder(0, 0, 0, 0));
+		passwordField.setBackground(new Color(33, 45, 58));
+		passwordField.setBounds(602, 39, 257, 24);
+		scrollPanel.add(passwordField);
 		
 		JLabel lblName_1 = new JLabel();
 		lblName_1.setText("Password:");
@@ -121,21 +98,24 @@ public class Profile extends Page {
 		scrollPanel.add(lblName_1);
 		
 		JLabel lblSave = new JLabel();
-		lblSave.setText("Save");
+		lblSave.setText("  Save");
+		lblSave.setIcon(IM.rescaleImage(20, 20, "Save"));
 		lblSave.setForeground(Color.WHITE);
 		lblSave.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblSave.setBounds(834, 261, 75, 35);
 		scrollPanel.add(lblSave);
 		
-		JLabel lblDelete = new JLabel();
-		lblDelete.setText("Delete");
-		lblDelete.setForeground(Color.WHITE);
-		lblDelete.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblDelete.setBounds(749, 261, 75, 35);
-		scrollPanel.add(lblDelete);
+		VisibilityButton = new JLabel("");
+		VisibilityButton.setBounds(869, 39, 16, 23);
+		VisibilityButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));		
+		VisibilityButton.setIcon(new ImageIcon(LogIn.class.getResource("/cs/images/Visible.png")));
+		scrollPanel.add(VisibilityButton);
 		
-		
+		initEvents();
 		
 	}
-
+	
+	private void initEvents() {
+		VisibilityButton.addMouseListener(new PasswordVisibilityController(passwordField, VisibilityButton));
+	}
 }

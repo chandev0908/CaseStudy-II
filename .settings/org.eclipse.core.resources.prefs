@@ -1,4 +1,4 @@
 eclipse.preferences.version=1
-encoding//src/cs/events/LogInEvent.java=UTF-8
+encoding//src/cs/controller/LoginController.java=UTF-8
+encoding//src/cs/controller/PasswordVisibilityController.java=UTF-8
 encoding//src/cs/primaries/LogIn.java=UTF-8
-encoding//src/cs/primaries/Registration.java=UTF-8

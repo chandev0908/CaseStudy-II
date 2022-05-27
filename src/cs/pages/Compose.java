@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import com.toedter.calendar.JDateChooser;
 
 import cs.components.CScrollBar;
+import cs.components.ImageManager;
 import cs.components.Page;
 import cs.controller.SendEmailController;
 
@@ -20,7 +21,8 @@ public class Compose extends Page{
 	/**
 	 * Create the panel.
 	 */
-
+	
+	ImageManager IM = new ImageManager();
 	public Compose() {
 		
 		scrollPane.setBounds(58, 170,840,373);
@@ -37,26 +39,13 @@ public class Compose extends Page{
 		txtCompose.setForeground(Color.WHITE);
 		txtCompose.setBackground(Color.decode("#212d3a"));
 		
-		JLabel lblSave = new JLabel();
-		lblSave.setText("Save");
-		lblSave.setForeground(Color.WHITE);
-		lblSave.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblSave.setBounds(653, 124, 75, 35);
-		scrollPanel.add(lblSave);
-		
 		JLabel lblSend = new JLabel();
-		lblSend.setText("Send");
+		lblSend.setText("  Send");
 		lblSend.setForeground(Color.WHITE);
+		lblSend.setIcon(IM.rescaleImage(20, 20, "Send"));
 		lblSend.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblSend.setBounds(738, 124, 75, 35);
+		lblSend.setBounds(823, 124, 75, 35);
 		scrollPanel.add(lblSend);
-
-		JLabel lblView = new JLabel();
-		lblView.setText("View");
-		lblView.setForeground(Color.WHITE);
-		lblView.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblView.setBounds(823, 124, 75, 35);
-		scrollPanel.add(lblView);
 		
 		JLabel lblSubject = new JLabel();
 		lblSubject.setText("Subject:");
@@ -80,14 +69,14 @@ public class Compose extends Page{
 		txtRecipient.setColumns(10);
 		txtRecipient.setBorder(new EmptyBorder(0, 0, 0, 0));
 		txtRecipient.setBackground(new Color(33, 45, 58));
-		txtRecipient.setBounds(170, 78, 257, 24);
+		txtRecipient.setBounds(605, 32, 257, 24);
 		scrollPanel.add(txtRecipient);
 		
 		JLabel lblRecipient = new JLabel();
 		lblRecipient.setText("Recipient:");
 		lblRecipient.setForeground(Color.WHITE);
 		lblRecipient.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblRecipient.setBounds(58, 70, 102, 35);
+		lblRecipient.setBounds(482, 24, 102, 35);
 		scrollPanel.add(lblRecipient);
 		
 		JLabel lblMessage = new JLabel();
@@ -96,18 +85,6 @@ public class Compose extends Page{
 		lblMessage.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblMessage.setBounds(58, 128, 102, 35);
 		scrollPanel.add(lblMessage);
-		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(578, 32, 259, 24);
-		scrollPanel.add(dateChooser);
-		
-		JLabel lblDate = new JLabel();
-		lblDate.setText("Date:");
-		lblDate.setForeground(Color.WHITE);
-		lblDate.setBackground(new Color(33, 45, 58));
-		lblDate.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblDate.setBounds(493, 24, 75, 35);
-		scrollPanel.add(lblDate);
 
 		// Mouse Listener for Send
 		SendEmailController sendController = new SendEmailController(txtCompose, txtSubject, txtRecipient);

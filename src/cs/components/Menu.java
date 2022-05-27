@@ -3,7 +3,9 @@ package cs.components;
 import java.awt.Color;
 
 import javax.swing.ButtonGroup;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
@@ -11,6 +13,7 @@ import java.awt.BorderLayout;
 
 import cs.components.SquircleComponent.FlatEdgeLocale;
 import cs.model.Menu_Model;
+import cs.primaries.LogIn;
 
 import java.awt.Dimension;
 import javax.swing.SwingConstants;
@@ -32,16 +35,15 @@ public class Menu  {
 	private SquircleComponent contentPane;
 	
 	private MenuItem[] mi = new MenuItem[11];	
-	/**
-	 * Create the panel.
-	 */
+
 	private JPanel LogoPanel,ItemPanel;
 	private ButtonGroup GroupList;
 
 	private JTabbedPane ReferencePage;
-	public Menu(JTabbedPane ReferencePage) {
+	private JFrame App;
+	public Menu(JTabbedPane ReferencePage, JFrame App) {
 		this.ReferencePage = ReferencePage;
-		
+		this.App = App;
 		
 		contentPane = new SquircleComponent();
 		contentPane.setGradient(colorGradient[0], colorGradient[1]);
@@ -103,9 +105,10 @@ public class Menu  {
 		mi[4] = new MenuItem(new Menu_Model("","Settings", Menu_Model.MenuType.TITLE));
 		
 		mi[5] = new MenuItem(new Menu_Model("Profile","Profile", Menu_Model.MenuType.ITEM));
-		mi[6] = new MenuItem(new Menu_Model("Settings","General", Menu_Model.MenuType.ITEM));
-		mi[7] = new MenuItem(new Menu_Model("Logout","Logout", Menu_Model.MenuType.ITEM));
+
+		mi[6] = new MenuItem(new Menu_Model("Logout","Logout", Menu_Model.MenuType.ITEM));
 		
+		mi[7] = new MenuItem(new Menu_Model("","", Menu_Model.MenuType.BLANK));
 		mi[8] = new MenuItem(new Menu_Model("","", Menu_Model.MenuType.BLANK));
 		mi[9] = new MenuItem(new Menu_Model("","", Menu_Model.MenuType.BLANK));
 		mi[10] = new MenuItem(new Menu_Model("","", Menu_Model.MenuType.BLANK));
@@ -114,8 +117,23 @@ public class Menu  {
 		setActionEvent(mi[1], 1);
 		setActionEvent(mi[2], 2);
 		setActionEvent(mi[5], 3);
-		setActionEvent(mi[6], 4);
-		setActionEvent(mi[7], 5);
+
+		//Special Case Log out doesn't have a page but prompts a JOption to close
+		mi[6].addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) { //Code Duplicated from LogIn Events due to lack of insight
+				if (JOptionPane.showConfirmDialog(ReferencePage, "Are you sure?", "Exit", //Option pane close indicator
+					    JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+								App.dispose();
+								LogIn l = new LogIn();
+								l.setLocationRelativeTo(App);
+								l.setVisible(true);
+								
+					}
+			}
+			
+		});
 	}
 	
 

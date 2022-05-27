@@ -26,7 +26,8 @@ import cs.model.StudentDataModel;
 public class StudentData extends Page {
 	private CTable table;
 	StudentDataModel sdm = new StudentDataModel();
-
+	ImageManager IM = new ImageManager();
+	
 	@SuppressWarnings("serial")
 	public StudentData() {
 		ImageManager IM = new ImageManager();
@@ -76,10 +77,10 @@ public class StudentData extends Page {
 		headerPane.add(searchImg);
 
 		JLabel lblFName = new JLabel();
-		lblFName.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblFName.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblFName.setForeground(Color.WHITE);
-		lblFName.setText("First Name");
-		lblFName.setBounds(31, 11, 75, 35);
+		lblFName.setText("First Name:");
+		lblFName.setBounds(31, 11, 110, 35);
 		scrollPanel.add(lblFName);
 
 		JTextField txtFName = new JTextField();
@@ -88,14 +89,14 @@ public class StudentData extends Page {
 		txtFName.setColumns(10);
 		txtFName.setBorder(new EmptyBorder(0, 0, 0, 0));
 		txtFName.setBackground(new Color(33, 45, 58));
-		txtFName.setBounds(116, 19, 257, 24);
+		txtFName.setBounds(151, 17, 257, 24);
 		scrollPanel.add(txtFName);
 
 		JLabel lblSection = new JLabel();
 		lblSection.setText("Section:");
 		lblSection.setForeground(Color.WHITE);
 		lblSection.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblSection.setBounds(31, 54, 75, 35);
+		lblSection.setBounds(31, 54, 110, 35);
 		scrollPanel.add(lblSection);
 
 		JTextField txtSection = new JTextField();
@@ -104,14 +105,14 @@ public class StudentData extends Page {
 		txtSection.setColumns(10);
 		txtSection.setBorder(new EmptyBorder(0, 0, 0, 0));
 		txtSection.setBackground(new Color(33, 45, 58));
-		txtSection.setBounds(116, 62, 257, 24);
+		txtSection.setBounds(151, 62, 257, 24);
 		scrollPanel.add(txtSection);
 
 		JLabel lblYear = new JLabel();
 		lblYear.setText("Year:");
 		lblYear.setForeground(Color.WHITE);
 		lblYear.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblYear.setBounds(405, 57, 75, 35);
+		lblYear.setBounds(460, 54, 118, 35);
 		scrollPanel.add(lblYear);
 
 		JTextField txtYear = new JTextField();
@@ -120,14 +121,14 @@ public class StudentData extends Page {
 		txtYear.setColumns(10);
 		txtYear.setBorder(new EmptyBorder(0, 0, 0, 0));
 		txtYear.setBackground(new Color(33, 45, 58));
-		txtYear.setBounds(490, 65, 257, 24);
+		txtYear.setBounds(588, 65, 257, 24);
 		scrollPanel.add(txtYear);
 
 		JLabel lblEmail = new JLabel();
 		lblEmail.setText("Email:");
 		lblEmail.setForeground(Color.WHITE);
 		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblEmail.setBounds(405, 100, 75, 35);
+		lblEmail.setBounds(460, 100, 118, 35);
 		scrollPanel.add(lblEmail);
 
 		JTextField txtEmail = new JTextField();
@@ -136,64 +137,56 @@ public class StudentData extends Page {
 		txtEmail.setColumns(10);
 		txtEmail.setBorder(new EmptyBorder(0, 0, 0, 0));
 		txtEmail.setBackground(new Color(33, 45, 58));
-		txtEmail.setBounds(490, 108, 257, 24);
+		txtEmail.setBounds(588, 108, 257, 24);
 		scrollPanel.add(txtEmail);
 
 		JLabel lblDelete = new JLabel();
-		lblDelete.setText("Delete");
+		lblDelete.setText("  Delete");
+		lblDelete.setIcon(IM.rescaleImage(20, 20, "Delete"));
 		lblDelete.setForeground(Color.WHITE);
 		lblDelete.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblDelete.setBounds(34, 143, 75, 35);
+		lblDelete.setBounds(69, 148, 75, 35);
 		scrollPanel.add(lblDelete);
 
 		JLabel lblInsert = new JLabel();
-		lblInsert.setText("Insert");
+		lblInsert.setText("  Insert");
+		lblInsert.setIcon(IM.rescaleImage(20, 20, "Add"));
 		lblInsert.setForeground(Color.WHITE);
 		lblInsert.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblInsert.setBounds(139, 143, 75, 35);
+		lblInsert.setBounds(203, 148, 75, 35);
 		scrollPanel.add(lblInsert);
 
 		JLabel lblUpdate = new JLabel();
-		lblUpdate.setText("Update");
+		lblUpdate.setText("  Update");
+		lblUpdate.setIcon(IM.rescaleImage(20, 20, "Update"));
 		lblUpdate.setForeground(Color.WHITE);
 		lblUpdate.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblUpdate.setBounds(250, 143, 75, 35);
+		lblUpdate.setBounds(342, 148, 92, 35);
 		scrollPanel.add(lblUpdate);
 
-		JLabel lblSave = new JLabel();
-		lblSave.setText("Save");
-		lblSave.setForeground(Color.WHITE);
-		lblSave.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblSave.setBounds(372, 143, 75, 35);
-		scrollPanel.add(lblSave);
-
 		JLabel lblExport = new JLabel();
-		lblExport.setText("Export");
+		lblExport.setIcon(IM.rescaleImage(20, 20, "Export"));
+		lblExport.setText("  Export");
 		lblExport.setForeground(Color.WHITE);
 		lblExport.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblExport.setBounds(485, 143, 75, 35);
+		lblExport.setBounds(486, 148, 92, 35);
 		scrollPanel.add(lblExport);
 
 		JLabel lblRefresh = new JLabel();
-		lblRefresh.setText("Refresh");
+		lblRefresh.setText("  Refresh");
+		lblRefresh.setIcon(IM.rescaleImage(20, 20, "Refresh"));
 		lblRefresh.setForeground(Color.WHITE);
 		lblRefresh.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblRefresh.setBounds(709, 143, 75, 35);
+		lblRefresh.setBounds(622, 148, 92, 35);
 		scrollPanel.add(lblRefresh);
 
 		JLabel lblEdit = new JLabel();
-		lblEdit.setText("Edit");
+		lblEdit.setText("  Edit");
+		lblEdit.setIcon(IM.rescaleImage(20, 20, "Edit"));
 		lblEdit.setForeground(Color.WHITE);
 		lblEdit.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblEdit.setBounds(825, 143, 75, 35);
+		lblEdit.setBounds(770, 148, 75, 35);
 		scrollPanel.add(lblEdit);
-
-		JLabel lblImport = new JLabel();
-		lblImport.setText("Import");
-		lblImport.setForeground(Color.WHITE);
-		lblImport.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblImport.setBounds(600, 143, 75, 35);
-		scrollPanel.add(lblImport);
 
 		scrollPanel.add(scrollPane);
 
@@ -201,7 +194,7 @@ public class StudentData extends Page {
 		lblCourse.setText("Course:");
 		lblCourse.setForeground(Color.WHITE);
 		lblCourse.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblCourse.setBounds(31, 100, 75, 35);
+		lblCourse.setBounds(31, 100, 110, 35);
 		scrollPanel.add(lblCourse);
 
 		JTextField txtCourse = new JTextField();
@@ -210,7 +203,7 @@ public class StudentData extends Page {
 		txtCourse.setColumns(10);
 		txtCourse.setBorder(new EmptyBorder(0, 0, 0, 0));
 		txtCourse.setBackground(new Color(33, 45, 58));
-		txtCourse.setBounds(116, 108, 257, 24);
+		txtCourse.setBounds(151, 108, 257, 24);
 		scrollPanel.add(txtCourse);
 
 		JTextField txtLName = new JTextField();
@@ -219,14 +212,14 @@ public class StudentData extends Page {
 		txtLName.setColumns(10);
 		txtLName.setBorder(new EmptyBorder(0, 0, 0, 0));
 		txtLName.setBackground(new Color(33, 45, 58));
-		txtLName.setBounds(490, 19, 257, 24);
+		txtLName.setBounds(588, 19, 257, 24);
 		scrollPanel.add(txtLName);
 
 		JLabel lblName = new JLabel();
-		lblName.setText("Last Name");
+		lblName.setText("Last Name:");
 		lblName.setForeground(Color.WHITE);
-		lblName.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblName.setBounds(405, 11, 75, 35);
+		lblName.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblName.setBounds(460, 11, 118, 35);
 		scrollPanel.add(lblName);
 		InsertStudentController insertController = new InsertStudentController(lblInsert, txtFName, txtLName,
 				txtSection, txtCourse, txtYear, txtEmail, table);

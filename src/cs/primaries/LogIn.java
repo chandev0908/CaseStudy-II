@@ -17,8 +17,10 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.SoftBevelBorder;
 
-import cs.events.ComponentMovability;
-import cs.events.LogInEvent;
+import cs.controller.ComponentMovability;
+import cs.controller.LoginController;
+import cs.controller.PasswordVisibilityController;
+import cs.controller.WindowExitController;
 
 import javax.swing.SwingConstants;
 
@@ -94,17 +96,8 @@ public class LogIn extends JFrame {
 		VisibilityButton.setBounds(586, 250, 16, 23);
 		contentPane.add(VisibilityButton);
 		
-		Label lblErrorPrompt = new Label("");
-		lblErrorPrompt.setForeground(Color.RED);
-		lblErrorPrompt.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 14));
-		lblErrorPrompt.setBounds(297, 290, 283, 15);
-		contentPane.add(lblErrorPrompt);
-
-		
 		LogIn = new JButton("Log In");
-		LogIn.setForeground(Color.WHITE);
-		
-			
+		LogIn.setForeground(Color.WHITE);	
 		LogIn.setBackground(new Color(204, 51, 51));
 		LogIn.setBounds(340, 321, 187, 60);
 		contentPane.add(LogIn);
@@ -114,19 +107,8 @@ public class LogIn extends JFrame {
 		CloseButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 22));
 		CloseButton.setBounds(585, 10, 29, 36);
 		contentPane.add(CloseButton);
-		
-		RegisterButton = new JLabel("Sign Up");
-		RegisterButton.setForeground(Color.RED);
-		RegisterButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 14));
-		RegisterButton.setBounds(473, 398, 63, 17);
-		contentPane.add(RegisterButton);
+			
 
-		
-		Label label = new Label("Don't have account?"); 							//Question label
-		label.setForeground(Color.BLACK);
-		label.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 14));
-		label.setBounds(340, 398, 139, 17);
-		contentPane.add(label);
 		
 	}
 
@@ -135,10 +117,9 @@ public class LogIn extends JFrame {
 		ComponentMovability move = new ComponentMovability(LogIn.this, contentPane);
 		move.setMovable(true);
 		//Login Events
-		LogIn.addActionListener(new LogInEvent.LogIn());
-		CloseButton.addMouseListener(new LogInEvent.Exit());
-		RegisterButton.addMouseListener(new LogInEvent.Register(this));
-		VisibilityButton.addMouseListener(new LogInEvent.PasswordVisibility(passwordField, VisibilityButton));
+		LogIn.addActionListener(new LoginController.LogIn());
+		CloseButton.addMouseListener(new WindowExitController(this));
+		VisibilityButton.addMouseListener(new PasswordVisibilityController(passwordField, VisibilityButton));
 	}
 
 	

@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import cs.components.Menu;
 import cs.components.Page;
 import cs.components.SquircleComponent;
-import cs.events.ComponentMovability;
+import cs.controller.ComponentMovability;
 import cs.pages.*;
 
 
@@ -86,7 +86,7 @@ public class Application extends JFrame {
 	
 		PagePane.add(tabbedPane);
 		
-		Menu menu = new Menu(tabbedPane);
+		Menu menu = new Menu(tabbedPane,this);
 		contentPane.add(menu.getContentPane(), BorderLayout.WEST);
 		addPages();
 		
@@ -97,15 +97,13 @@ public class Application extends JFrame {
 	}
 	
 	private Page[] setReferencePages() {
-		Page[] Reference = new Page[6];
+		Page[] Reference = new Page[4];
 		
 		Reference[0] = new StudentData();
 		Reference[1] = new Templates();
 		Reference[2] = new Compose();
 		Reference[3] = new Profile();
-		Reference[4] = new GeneralSettings();
-		Reference[5] = new LogOut();
-		
+	
 		return Reference;	
 	
 	}

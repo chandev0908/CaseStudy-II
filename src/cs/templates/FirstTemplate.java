@@ -20,8 +20,8 @@ public class FirstTemplate {
 		properties.put("mail.smtp.host", "smtp.gmail.com");
 		properties.put("mail.smtp.port", "587");
 
-		String myEmail = "dalaganx@gmail.com";
-		String myPass = "zin2001222";
+		String myEmail = "";
+		String myPass = "";
 
 		Session session = Session.getInstance(properties, new Authenticator() {
 			@Override

@@ -5,32 +5,49 @@ import java.awt.Font;
 
 import javax.swing.JEditorPane;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import cs.components.CScrollBar;
+import cs.components.ImageManager;
 import cs.components.Page;
 import cs.components.SquircleComponent;
 
 public class Templates extends Page {
 
-	/**
-	 * Create the panel.
-	 */
+	ImageManager IM = new ImageManager();
 	public Templates() {
 
 		SquircleComponent[] TemplateCard = new SquircleComponent[3];
+		JLabel[] CardState = new JLabel[3];
+		
 		
 		TemplateCard[0] = new SquircleComponent();
 		TemplateCard[0].setGradient("#FB1497", "#EB8C12");
-		TemplateCard[0].setBounds(47, 27, 250, 250);
+		TemplateCard[0].setBounds(47, 125, 250, 250);
 		
 		TemplateCard[1] = new SquircleComponent();
 		TemplateCard[1].setGradient("#FB1497", "#EB8C12");
-		TemplateCard[1].setBounds(352, 27, 250, 250);
+		TemplateCard[1].setBounds(352, 125, 250, 250);
 		
 		TemplateCard[2] = new SquircleComponent();
 		TemplateCard[2].setGradient("#FB1497", "#EB8C12");
-		TemplateCard[2].setBounds(645, 27, 250, 250);
+		TemplateCard[2].setBounds(645, 125, 250, 250);
+		
+		CardState[0] = new JLabel();
+		CardState[0].setBounds(TemplateCard[0].getBounds());
+		CardState[0].setIcon(null);
+		CardState[0].setHorizontalAlignment(SwingConstants.CENTER);
+		
+		CardState[1] = new JLabel();
+		CardState[1].setBounds(TemplateCard[1].getBounds());
+		CardState[1].setIcon(IM.rescaleImage(50, 50, "Add"));
+		CardState[1].setHorizontalAlignment(SwingConstants.CENTER);
+		
+		CardState[2] = new JLabel();
+		CardState[2].setBounds(TemplateCard[2].getBounds());
+		CardState[2].setIcon(IM.rescaleImage(50, 50, "Add"));
+		CardState[2].setHorizontalAlignment(SwingConstants.CENTER);
 		
 		
 		scrollPane.setBounds(191,303,734,240);
@@ -42,37 +59,11 @@ public class Templates extends Page {
 		scrollPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		scrollPanel.add(scrollPane);
 		
-		JEditorPane editorPane = new JEditorPane();
-		scrollPane.setViewportView(editorPane);
-		editorPane.setForeground(Color.WHITE);
-		editorPane.setBackground(Color.decode("#212d3a"));
-		
-		JLabel lblUpdate = new JLabel();
-		lblUpdate.setText("Update\r\n");
-		lblUpdate.setForeground(Color.WHITE);
-		lblUpdate.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblUpdate.setBounds(52, 306, 75, 35);
-		scrollPanel.add(lblUpdate);
-		
-		JLabel lblDelete = new JLabel();
-		lblDelete.setText("Delete");
-		lblDelete.setForeground(Color.WHITE);
-		lblDelete.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblDelete.setBounds(52, 352, 75, 35);
-		scrollPanel.add(lblDelete);
-		
-		JLabel lblView = new JLabel();
-		lblView.setText("View");
-		lblView.setForeground(Color.WHITE);
-		lblView.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblView.setBounds(52, 398, 75, 35);
-		scrollPanel.add(lblView);
 		
 		
-		
-		scrollPanel.add(TemplateCard[0]);
-		scrollPanel.add(TemplateCard[1]);
-		scrollPanel.add(TemplateCard[2]);
+		scrollPanel.add(CardState[0]); scrollPanel.add(TemplateCard[0]); 
+		scrollPanel.add(CardState[1]); scrollPanel.add(TemplateCard[1]); 
+		scrollPanel.add(CardState[2]); scrollPanel.add(TemplateCard[2]); 
 		
 	}
 

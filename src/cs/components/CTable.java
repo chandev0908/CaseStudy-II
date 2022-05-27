@@ -31,18 +31,6 @@ public class CTable extends JTable {
 		}
 	}
 	
-	//Inner Component Class for Status 
-	private class StatusPanel extends SquircleComponent{
-		StatusPanel(StatusType status){
-			setLayout(new BorderLayout());
-			JLabel lblStatus = new JLabel(status.toString(),SwingConstants.CENTER);
-			lblStatus.setFont(new Font("sansserif", 1, 12));
-			lblStatus.setForeground(Color.WHITE);
-			add(lblStatus, BorderLayout.CENTER);
-			setGradient(status.hexGradient[0], status.hexGradient[1]);
-		}
-		
-	}
     
     //Inner Component Class for TableHeader
 	private class TableHeader extends JLabel {
@@ -71,7 +59,7 @@ public class CTable extends JTable {
     	final DefaultTableCellRenderer ItemCellRenderer =	new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable jtable, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-                if (column != 6) {
+             
                     Component com = super.getTableCellRendererComponent(jtable, value, isSelected, hasFocus, row, column);
                     com.setBackground(Color.WHITE);
                     setBorder(noFocusBorder);
@@ -81,12 +69,8 @@ public class CTable extends JTable {
                         com.setForeground(new Color(102, 102, 102));
                     }
                     return com;
-                } else {
-                    StatusType type = (StatusType) value;
-                    StatusPanel status = new StatusPanel(type);
-                    return status;
-                }
-            }
+                } 
+            
         };
         
         final DefaultTableCellRenderer HeaderCellRenderer = new DefaultTableCellRenderer() {

@@ -1,4 +1,4 @@
-package cs.events;
+package cs.controller;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
