@@ -12,6 +12,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.Color;
+import java.awt.Cursor;
+
 import javax.swing.SwingConstants;
 import java.awt.Dimension;
 
@@ -37,6 +39,7 @@ public class MenuItem extends JToggleButton {
 		setContentAreaFilled(false);
 		setEnabled(false);
 		setHorizontalAlignment(SwingConstants.LEFT);
+		setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		
 		lblItem = new JLabel();
 		lblItem.setHorizontalAlignment(SwingConstants.LEFT);

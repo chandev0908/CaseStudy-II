@@ -20,7 +20,7 @@ import cs.components.Page;
 import cs.controller.LoginController;
 import cs.controller.PasswordVisibilityController;
 import cs.db.ConnectionDB;
-import cs.primaries.LogIn;
+
 
 import javax.swing.JTextField;
 import java.awt.Font;
@@ -110,7 +110,7 @@ public class Profile extends Page {
 		VisibilityButton = new JLabel("");
 		VisibilityButton.setBounds(869, 39, 16, 23);
 		VisibilityButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		VisibilityButton.setIcon(new ImageIcon(LogIn.class.getResource("/cs/images/Visible.png")));
+		VisibilityButton.setIcon(IM.rescaleImage(20, 20, "Visible"));
 		scrollPanel.add(VisibilityButton);
 
 		// Going to set default values for email and pass if theres current data in db

@@ -12,6 +12,7 @@ import javax.swing.JTabbedPane;
 import java.awt.BorderLayout;
 
 import cs.components.SquircleComponent.FlatEdgeLocale;
+import cs.controller.WindowExitController;
 import cs.db.ConnectionDB;
 import cs.model.Menu_Model;
 import java.awt.Dimension;
@@ -113,36 +114,7 @@ public class Menu {
 		setActionEvent(mi[5], 3);
 
 		// Special Case Log out doesn't have a page but prompts a JOption to close
-		mi[6].addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) { // Code Duplicated from LogIn Events due to lack of insight
-				if (JOptionPane.showConfirmDialog(ReferencePage,
-						"Are you sure your email and pass will be permanently removed?", "Exit", // Option pane close
-																									// indicator
-						JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-					ConnectionDB db = new ConnectionDB();
-					Connection cn = db.getConnection();
-					String query = "DELETE FROM USERINF WHERE ID = ?;";
-					String query2 = "SELECT * FROM USERINF";
-					try {
-						PreparedStatement st2 = cn.prepareStatement(query2);
-						ResultSet rs2 = st2.executeQuery();	
-						rs2.next();
-						// Delete current email and pass
-						PreparedStatement st = cn.prepareStatement(query);
-						st.setInt(1, rs2.getInt("id"));
-						st.execute();
-					} catch (Exception ex) {
-						// TODO: handle exception
-						JOptionPane.showMessageDialog(null, "Logout error:" + ex);
-					}
-					App.dispose();
-				}
-
-			}
-
-		});
+		mi[6].addActionListener(new WindowExitController(App));
 	}
 
 	public SquircleComponent getContentPane() {

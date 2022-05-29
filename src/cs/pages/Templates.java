@@ -1,7 +1,12 @@
 package cs.pages;
 
 import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
@@ -62,6 +67,20 @@ public class Templates extends Page {
 		scrollPanel.add(CardState[1]); scrollPanel.add(TemplateCard[1]); 
 		scrollPanel.add(CardState[2]); scrollPanel.add(TemplateCard[2]); 
 		
+
+		TemplateCard[0].addMouseListener(new TemplateAction());
+		TemplateCard[1].addMouseListener(new TemplateAction());
+		TemplateCard[2].addMouseListener(new TemplateAction());
+
+	}
+	
+	 private class TemplateAction extends MouseAdapter {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JOptionPane.showMessageDialog(null, 
+				"This Feature is not yet implemented", "Unimplemented",
+				JOptionPane.WARNING_MESSAGE);
+			}
 	}
 
 }
