@@ -1,9 +1,6 @@
 package cs.pages;
 
 import java.awt.Color;
-import java.awt.Font;
-
-import javax.swing.JEditorPane;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;

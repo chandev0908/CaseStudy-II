@@ -41,8 +41,8 @@ public class EditStudentController implements MouseInputListener {
                 return "UPDATE students_dbs SET SECTION='" + query + "' WHERE STUDID= "
                         + sdm.getID(model.getSelectedRow());
             case 5:
-                return "UPDATE students_dbs SET YEAR='" + query + "' WHERE STUDID='"
-                        + sdm.getID(model.getSelectedRow()) + "'";
+                return "UPDATE students_dbs SET `YEAR`='" + query + "' WHERE STUDID= "
+                        + sdm.getID(model.getSelectedRow());
             default:
                 return null;
         }

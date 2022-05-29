@@ -87,7 +87,7 @@ public class InsertStudentController implements MouseInputListener {
                 st.setString(6, sdm.getTxtYear());
                 st.execute();
                 model.addRow(new Object[] { sdm.getTxtFName(), sdm.getTxtLName(), sdm.gettxtEmail(), sdm.getTxtCourse(),
-                        sdm.getTxtSection(), sdm.getTxtYear(), CTable.StatusType.PENDING });
+                        sdm.getTxtSection(), sdm.getTxtYear()});
 
                 String query2 = "SELECT MAX(STUDID) FROM STUDENTS_DBS;";
                 PreparedStatement st2 = cn.prepareStatement(query2);

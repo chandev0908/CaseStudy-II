@@ -27,7 +27,7 @@ public class StudentData extends Page {
 	private CTable table;
 	StudentDataModel sdm = new StudentDataModel();
 	ImageManager IM = new ImageManager();
-	
+
 	@SuppressWarnings("serial")
 	public StudentData() {
 		ImageManager IM = new ImageManager();
@@ -39,10 +39,10 @@ public class StudentData extends Page {
 
 				},
 				new String[] {
-						"First Name", "Last Name", "Email", "Course", "Section", "Year", "Status"
+						"First Name", "Last Name", "Email", "Course", "Section", "Year"
 				}) {
 			boolean[] canEdit = new boolean[] {
-					true, true, true, true, true, true, false
+					true, true, true, true, true, true
 			};
 
 			public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -245,8 +245,7 @@ public class StudentData extends Page {
 				sdm.addID(rs.getInt("studid"));
 				System.out.println("array: " + rs.getInt("studid"));
 				table.addRow(new Object[] { rs.getString("firstname"), rs.getString("lastname"), rs.getString("email"),
-						rs.getString("course"), rs.getString("section"), rs.getString("year"),
-						CTable.StatusType.PENDING });
+						rs.getString("course"), rs.getString("section"), rs.getString("year") });
 			}
 		} catch (Exception err) {
 			System.out.println(err);

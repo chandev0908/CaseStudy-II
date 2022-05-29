@@ -5,11 +5,9 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
-import java.awt.BorderLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JTable;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -18,18 +16,18 @@ import javax.swing.table.DefaultTableModel;
 public class CTable extends JTable {
 
 	//Inner Status enum
-	public enum StatusType {
-		SENT("#05371D","#5EEB12"), 
-		PENDING("#373305","#E2EB12"), 
-		FAILED("#370510", "#EB1212");
+	// public enum StatusType {
+	// 	SENT("#05371D","#5EEB12"), 
+	// 	PENDING("#373305","#E2EB12"), 
+	// 	FAILED("#370510", "#EB1212");
 		
-		final String[] hexGradient = new String[2];
+	// 	final String[] hexGradient = new String[2];
 		
-		StatusType(String hexOne, String hexTwo){
-			hexGradient[0] = hexOne;
-			hexGradient[1] = hexTwo;
-		}
-	}
+	// 	StatusType(String hexOne, String hexTwo){
+	// 		hexGradient[0] = hexOne;
+	// 		hexGradient[1] = hexTwo;
+	// 	}
+	// }
 	
     
     //Inner Component Class for TableHeader
@@ -73,23 +71,23 @@ public class CTable extends JTable {
             
         };
         
-        final DefaultTableCellRenderer HeaderCellRenderer = new DefaultTableCellRenderer() {
-            @Override
-            public Component getTableCellRendererComponent(JTable jtable, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-                TableHeader header = new TableHeader(value + "");
-                //This eludes to the last 
-                if (column == 4) {
-                    header.setHorizontalAlignment(JLabel.CENTER);
-                }
-                return header;
-            }
-        };
+        // final DefaultTableCellRenderer HeaderCellRenderer = new DefaultTableCellRenderer() {
+        //     @Override
+        //     public Component getTableCellRendererComponent(JTable jtable, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+        //         TableHeader header = new TableHeader(value + "");
+        //         //This eludes to the last 
+        //         if (column == 4) {
+        //             header.setHorizontalAlignment(JLabel.CENTER);
+        //         }
+        //         return header;
+        //     }
+        // };
     	
         setShowHorizontalLines(true);
         setGridColor(new Color(230, 230, 230));
         setRowHeight(40);
         getTableHeader().setReorderingAllowed(false);
-        getTableHeader().setDefaultRenderer(HeaderCellRenderer);
+        // getTableHeader().setDefaultRenderer(HeaderCellRenderer);
         setDefaultRenderer(Object.class, ItemCellRenderer);
         		
         		

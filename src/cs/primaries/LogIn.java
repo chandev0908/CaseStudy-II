@@ -18,7 +18,6 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.SoftBevelBorder;
 
 import cs.controller.ComponentMovability;
-import cs.controller.LoginController;
 import cs.controller.PasswordVisibilityController;
 import cs.controller.WindowExitController;
 
@@ -66,7 +65,7 @@ public class LogIn extends JFrame {
 		lblPicutreLabel.setIcon(new ImageIcon(LogIn.class.getResource("/cs/images/Banner.png")));
 		panel.add(lblPicutreLabel);
 		
-		Label lblUsername = new Label("Username");
+		Label lblUsername = new Label("Email");
 		lblUsername.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 18));
 		lblUsername.setBounds(297, 72, 127, 41);
 		contentPane.add(lblUsername);
@@ -117,7 +116,6 @@ public class LogIn extends JFrame {
 		ComponentMovability move = new ComponentMovability(LogIn.this, contentPane);
 		move.setMovable(true);
 		//Login Events
-		LogIn.addActionListener(new LoginController.LogIn());
 		CloseButton.addMouseListener(new WindowExitController(this));
 		VisibilityButton.addMouseListener(new PasswordVisibilityController(passwordField, VisibilityButton));
 	}
